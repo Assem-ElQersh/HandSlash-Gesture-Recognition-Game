@@ -1,0 +1,6 @@
+checkpoints/
+data/raw/
+benchmarks/results/
+__pycache__/
+*.pyc
+.pytest_cache/

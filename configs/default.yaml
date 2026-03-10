@@ -1,0 +1,63 @@
+gestures:
+  - slash_left
+  - slash_right
+  - slash_down
+  - circle
+  - zigzag
+  - triangle
+
+paths:
+  raw_data: data/raw
+  checkpoints: checkpoints
+  benchmarks: benchmarks/results
+
+capture:
+  camera_index: 0
+  model_complexity: 0   # 0=LITE, 1=FULL
+  width: 640
+  height: 480
+
+processing:
+  n_points: 64          # resample length
+  use_pca: false        # PCA rotation alignment
+
+segmenter:
+  start_threshold: 15   # px/frame — motion above this starts a gesture
+  end_threshold: 8      # px/frame — motion below this for n_idle_frames ends it
+  n_idle_frames: 8
+  min_gesture_len: 10   # minimum trajectory points to accept
+
+models:
+  dtw:
+    n_neighbors: 1
+
+  hmm:
+    n_states: 6
+    n_iter: 100
+    n_direction_bins: 8
+
+  cnn:
+    channels: [64, 128]
+    dropout: 0.3
+    lr: 0.001
+    epochs: 60
+    batch_size: 32
+
+  lstm:
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.3
+    bidirectional: true
+    lr: 0.001
+    epochs: 60
+    batch_size: 32
+
+  transformer:
+    d_model: 64
+    nhead: 4
+    num_encoder_layers: 2
+    dim_feedforward: 128
+    dropout: 0.1
+    lr: 0.001
+    epochs: 60
+    batch_size: 32

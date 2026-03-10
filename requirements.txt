@@ -1,0 +1,19 @@
+# ---- Core (pinned for mediapipe compatibility) ----
+mediapipe==0.10.21
+opencv-contrib-python==4.11.0.86
+numpy<2
+
+# ---- Deep learning ----
+torch>=2.0
+
+# ---- Classical ML ----
+hmmlearn>=0.3
+scikit-learn>=1.3
+dtaidistance>=2.3
+
+# ---- Utilities ----
+PyYAML>=6.0
+matplotlib>=3.7
+
+# ---- Testing ----
+pytest>=7.4
