@@ -94,3 +94,9 @@ HandSlash-Gesture-Recognition-Game/
 3. **Slash trail** — A polyline of the last N fingertip positions is drawn to visualize the slash motion.
 4. **Collision detection** — Euclidean distance between the fingertip and each fruit center is computed; a hit is registered when `distance < Fruit_Size`.
 5. **Difficulty scaling** — Every 1000 points, spawn rate and fruit speed increase.
+ 
+---
+
+## License
+
+MIT License. See the [LICENSE](LICENSE) file for details.
